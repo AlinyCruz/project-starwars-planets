@@ -1,13 +1,21 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import StarwarsContext from '../context/StarwarsContext';
-// import planetsAPI from '../Services/StarwarsAPI';
 
 function Table() {
   const { planets } = useContext(StarwarsContext);
-  console.log(planets);
+  const [buscaNome, setBuscaNome] = useState('');
+
+  const planetsFilter = () => planets
+    .filter((p) => p.name.toLowerCase().includes(buscaNome.toLowerCase()));
+
   return (
     <div>
-      {/* { console.log(planets) } */}
+      <input
+        type="text"
+        data-testid="name-filter"
+        value={ buscaNome }
+        onChange={ (event) => setBuscaNome(event.target.value) }
+      />
       <table>
         <thead>
           <tr>
@@ -27,7 +35,7 @@ function Table() {
           </tr>
         </thead>
         <tbody>
-          { planets?.map((planet) => (
+          { planetsFilter().map((planet) => (
             <tr key={ planet.name }>
               <td>{planet.name}</td>
               <td>{planet.rotation_period}</td>

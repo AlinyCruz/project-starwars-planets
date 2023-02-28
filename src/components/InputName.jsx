@@ -1,9 +1,22 @@
-import React from 'react';
+// import React, { useContext, useState } from 'react';
+// import StarwarsContext from '../context/StarwarsContext';
 
-function InputName() {
-  return (
-    <input />
-  );
-}
+// function InputName() {
+//   const [buscaNome, setBuscaNome] = useState('');
+//   const { planets } = useContext(StarwarsContext);
 
-export default InputName;
+//   const planetsFilter = () => (planets.filter((p) => (p.name)));
+
+//   return (
+//     <div>
+//       <input
+//         type="text"
+//         data-testid="name-filter"
+//         value={ buscaNome }
+//         onChange={ (event) => setBuscaNome(event.target.value) }
+//       />
+//     </div>
+//   );
+// }
+
+// export default InputName;

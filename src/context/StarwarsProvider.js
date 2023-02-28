@@ -12,7 +12,6 @@ function StarwarsProvider({ children }) {
     setPlanets(results);
   };
   useEffect(() => {
-    // setPlanets(planet);
     planet();
   }, []);
 
@@ -20,7 +19,6 @@ function StarwarsProvider({ children }) {
     planets,
   }), [planets]);
 
-  console.log(context);
   return (
     <StarwarsContext.Provider value={ context }>
       { children }
@@ -29,7 +27,7 @@ function StarwarsProvider({ children }) {
 }
 
 StarwarsProvider.propTypes = {
-  children: PropTypes.object,
+  children: PropTypes.node,
 }.isRequired;
 
 export default StarwarsProvider;
