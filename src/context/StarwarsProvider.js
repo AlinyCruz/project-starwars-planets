@@ -1,4 +1,4 @@
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 // import planetsAPI from '../Services/StarwarsAPI';
 import { useEffect, useMemo, useState } from 'react';
 import StarwarsContext from './StarwarsContext';
@@ -28,8 +28,8 @@ function StarwarsProvider({ children }) {
   );
 }
 
-// StarwarsProvider.propTypes = {
-//   children: PropTypes.string.isRequired,
-// };
+StarwarsProvider.propTypes = {
+  children: PropTypes.object,
+}.isRequired;
 
 export default StarwarsProvider;
