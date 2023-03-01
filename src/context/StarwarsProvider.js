@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-// import planetsAPI from '../Services/StarwarsAPI';
 import { useEffect, useMemo, useState } from 'react';
 import StarwarsContext from './StarwarsContext';
 
@@ -11,6 +10,7 @@ function StarwarsProvider({ children }) {
     const { results } = await response.json();
     setPlanets(results);
   };
+
   useEffect(() => {
     planet();
   }, []);
