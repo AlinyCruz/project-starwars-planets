@@ -47,6 +47,9 @@ function Table() {
 
   return (
     <div>
+      <h1>
+        Projeto Starwars Planets
+      </h1>
       <input
         type="text"
         className="inputPlanet"

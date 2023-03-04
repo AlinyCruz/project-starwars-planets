@@ -1,25 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Gloock&family=Quicksand:wght@300&family=Tilt+Prism&display=swap');
 
 body {
-  background-image: url(https://wallpaperaccess.com/full/2137901.jpg);
-  font-family: Gloock , serif;
-  color: aliceblue;
+  background-image: url('https://wallpaperaccess.com/full/2137901.jpg');
   background-size: auto;
+  color: aliceblue;
+  font-family: Gloock , serif;
 }
 
 table {
-  position: absolute;
-  color: black;
-  opacity: 0.5;
+  background-color: rgb(119, 151, 151);
   border: 1px solid rgb(255, 255, 255);
   border-radius: 20px;
+  color: black;
+  opacity: 0.5;
   padding: 10px;
-  background-color: rgb(119, 151, 151);
+  position: absolute;
 }
 
- h1 {
-  color: rgb(237, 185, 0);
+h1 {
   border-radius: 15px;
+  color: rgb(237, 185, 0);
   padding: 5px;
 }
 
@@ -40,15 +40,15 @@ th, td {
 }
 
 .botaoFiltrar, select {
-  font-family: Gloock , serif;
   border-radius: 8px;
+  font-family: Gloock , serif;
   height: 25px;
   width: 110px;
 }
 
 .botaoRemoverFiltros {
-  font-family: Gloock , serif;
   border-radius: 8px;
+  font-family: Gloock , serif;
   height: 25px;
   width: 180px;
 }
