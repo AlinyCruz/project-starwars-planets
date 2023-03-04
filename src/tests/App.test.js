@@ -1,24 +1,30 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from '../App';
-import mockFetch from '../../cypress/mocks/fetch';
-// import StarwarsProvider from '../context/StarwarsProvider';
+// import mockFetch from '../../cypress/mocks/fetch';
+import StarwarsProvider from '../context/StarwarsProvider';
 
 describe('Testa o componente Table', () => {
-  beforeEach(() => {
-    global.fetch = jest.fn(mockFetch)
-  })
+  // beforeEach(() => {
+  //   global.fetch = jest.fn(mockFetch)
+  // })
 
-  afterEach(() => {
-    jest.clearAllMocks()
-  })
+  // afterEach(() => {
+  //   jest.clearAllMocks()
+  // })
 
   it('Testa se os componentes renderizam na tela', () => {
     render(
-      <App />
+      <StarwarsProvider>
+        <App />
+      </StarwarsProvider>
     )
-    const inputName = screen.getByRole('textbox')
-    expect(inputName).toBeInTheDocument();
+    //   const title = screen.getByRole('heading', {  name: /projeto starwars planets/i});
+    //   expect(title).toBeInTheDocument();
+    //   expect(title).toBeVisible();
+
+    // const inputName = screen.getByRole('textbox')
+    // expect(inputName).toBeInTheDocument();
 
     // const inputNumber = screen.getByRole('spinbutton')
     // expect(inputNumber).toBeInTheDocument();

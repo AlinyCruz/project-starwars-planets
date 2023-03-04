@@ -1,9 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Gloock&family=Quicksand:wght@300&family=Tilt+Prism&display=swap');
+
+body {
+  background-image: url(https://wallpaperaccess.com/full/2137901.jpg);
+  font-family: Gloock , serif;
+  color: aliceblue;
+  background-size: auto;
+}
+
 table {
-  border: 1px solid black;
-  display: flex;
-  flex-direction: column;
+  position: absolute;
+  color: black;
+  opacity: 0.5;
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 20px;
+  padding: 10px;
+  background-color: rgb(119, 151, 151);
+}
+
+ h1 {
+  color: rgb(237, 185, 0);
+  border-radius: 15px;
+  padding: 5px;
 }
 
 th {
-  border: 1px solid black;
+  color: rgb(237, 185, 0);
+}
+
+th, td {
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 15px;
+  padding: 5px;
+}
+
+.inputPlanet, .inputNumber {
+  border-radius: 10px;
+  height: 20px;
+  width: 300px;
+}
+
+.botaoFiltrar, select {
+  font-family: Gloock , serif;
+  border-radius: 8px;
+  height: 25px;
+  width: 110px;
+}
+
+.botaoRemoverFiltros {
+  font-family: Gloock , serif;
+  border-radius: 8px;
+  height: 25px;
+  width: 180px;
 }

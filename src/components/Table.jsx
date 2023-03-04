@@ -38,12 +38,19 @@ function Table() {
 
   const naoRetepeSelecao = () => nomeColunas.filter((coluna) => !selecaoFiltro
     .find((coluna2) => coluna === coluna2.colunas));
-  console.log(naoRetepeSelecao());
+  // console.log(naoRetepeSelecao());
+
+  const removeFiltro = (param) => {
+    const upDate = selecaoFiltro.filter((filtro) => filtro.colunas !== param);
+    setSelecaoFiltro(upDate);
+  };
 
   return (
     <div>
       <input
         type="text"
+        className="inputPlanet"
+        placeholder="Digite o nome do planeta"
         data-testid="name-filter"
         value={ buscaNome }
         onChange={ (event) => setBuscaNome(event.target.value) }
@@ -75,16 +82,32 @@ function Table() {
       <input
         type="number"
         data-testid="value-filter"
+        className="inputNumber"
         value={ selecao.valor }
         onChange={ (e) => setselecao({ ...selecao, valor: e.target.value }) }
       />
 
       <button
         data-testid="button-filter"
+        className="botaoFiltrar"
         type="button"
-        onClick={ () => setSelecaoFiltro([...selecaoFiltro, selecao]) }
+        onClick={ () => {
+          setSelecaoFiltro([...selecaoFiltro, selecao]);
+          setselecao({
+            colunas: 'population',
+            condicao: 'maior que',
+            valor: 0,
+          });
+        } }
       >
         Filtrar
+      </button>
+
+      <button
+        data-testid="button-remove-filters"
+        className="botaoRemoverFiltros"
+      >
+        Remover todas filtragens
       </button>
       {
         selecaoFiltro.map((userSelecao, index) => (
@@ -96,6 +119,12 @@ function Table() {
               {' '}
               {userSelecao.valor}
             </span>
+            <button
+              data-testid="filter"
+              onClick={ () => removeFiltro(userSelecao.colunas) }
+            >
+              X
+            </button>
           </div>
         ))
       }
