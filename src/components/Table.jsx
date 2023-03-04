@@ -115,7 +115,7 @@ function Table() {
       {
         selecaoFiltro.map((userSelecao, index) => (
           <div key={ index }>
-            <span>
+            <span className="spanFiltro">
               {userSelecao.colunas}
               {' '}
               {userSelecao.condicao}

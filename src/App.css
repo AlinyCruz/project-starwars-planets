@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Gloock&family=Quicksand:wght@300&family=Tilt+Prism&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Gloock&family=Quicksand:wght@300&family=Tilt+Prism&display=swap') ;
 
 body {
   background-image: url('https://wallpaperaccess.com/full/2137901.jpg');
@@ -9,7 +9,7 @@ body {
 
 table {
   background-color: rgb(119, 151, 151);
-  border: 1px solid rgb(255, 255, 255);
+  border: 1px solid white;
   border-radius: 20px;
   color: black;
   opacity: 0.5;
@@ -28,9 +28,18 @@ th {
 }
 
 th, td {
-  border: 1px solid rgb(255, 255, 255);
+  border: 1px solid white;
   border-radius: 15px;
   padding: 5px;
+}
+
+.spanFiltro {
+  background-color: aliceblue;
+  border: 1px solid white;
+  border-radius: 15px;
+  color: black;
+  height: 15px;
+  padding: 2px;
 }
 
 .inputPlanet, .inputNumber {
