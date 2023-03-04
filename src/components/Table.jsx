@@ -33,6 +33,13 @@ function Table() {
     return filtrarTudo;
   };
 
+  const nomeColunas = ['population', 'orbital_period',
+    'diameter', 'rotation_period', 'surface_water'];
+
+  const naoRetepeSelecao = () => nomeColunas.filter((coluna) => !selecaoFiltro
+    .find((coluna2) => coluna === coluna2.colunas));
+  console.log(naoRetepeSelecao());
+
   return (
     <div>
       <input
@@ -46,19 +53,19 @@ function Table() {
       <select
         data-testid="column-filter"
         value={ selecao.colunas }
-        onChange={ (e) => setselecao({ ...selecao, colunas: e.target.value }) }
+        onClick={ (e) => setselecao({ ...selecao, colunas: e.target.value }) }
       >
-        <option value="population">population</option>
-        <option value="orbital_period">orbital_period</option>
-        <option value="diameter">diameter</option>
-        <option value="rotation_period">rotation_period</option>
-        <option value="surface_water">surface_water</option>
+        {
+          naoRetepeSelecao().map((coluna) => (
+            <option key={ coluna } value={ coluna }>{ coluna }</option>
+          ))
+        }
       </select>
 
       <select
         data-testid="comparison-filter"
         value={ selecao.condicao }
-        onChange={ (e) => setselecao({ ...selecao, condicao: e.target.value }) }
+        onClick={ (e) => setselecao({ ...selecao, condicao: e.target.value }) }
       >
         <option value="maior que">maior que</option>
         <option value="menor que">menor que</option>
