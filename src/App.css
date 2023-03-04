@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Gloock&family=Quicksand:wght@300&family=Tilt+Prism&display=swap') ;
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Gloock&family=Quicksand:wght@300&family=Tilt+Prism&display=swap');
 
 body {
   background-image: url('https://wallpaperaccess.com/full/2137901.jpg');
   background-size: auto;
   color: aliceblue;
   font-family: Gloock , serif;
+  text-align: center;
 }
 
 table {
@@ -12,12 +13,14 @@ table {
   border: 1px solid white;
   border-radius: 20px;
   color: black;
-  opacity: 0.5;
+  opacity: 0.7;
   padding: 10px;
   position: absolute;
 }
 
 h1 {
+  font-size: 50px;
+  text-align: center;
   border-radius: 15px;
   color: rgb(237, 185, 0);
   padding: 5px;
@@ -38,8 +41,7 @@ th, td {
   border: 1px solid white;
   border-radius: 15px;
   color: black;
-  height: 15px;
-  padding: 2px;
+  width: 250px;
 }
 
 .inputPlanet, .inputNumber {

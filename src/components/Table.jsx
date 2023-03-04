@@ -48,7 +48,7 @@ function Table() {
   return (
     <div>
       <h1>
-        Projeto Starwars Planets
+        Starwars Planets
       </h1>
       <input
         type="text"
@@ -63,7 +63,7 @@ function Table() {
       <select
         data-testid="column-filter"
         value={ selecao.colunas }
-        onClick={ (e) => setselecao({ ...selecao, colunas: e.target.value }) }
+        onChange={ (e) => setselecao({ ...selecao, colunas: e.target.value }) }
       >
         {
           naoRetepeSelecao().map((coluna) => (
@@ -75,7 +75,7 @@ function Table() {
       <select
         data-testid="comparison-filter"
         value={ selecao.condicao }
-        onClick={ (e) => setselecao({ ...selecao, condicao: e.target.value }) }
+        onChange={ (e) => setselecao({ ...selecao, condicao: e.target.value }) }
       >
         <option value="maior que">maior que</option>
         <option value="menor que">menor que</option>
@@ -109,13 +109,14 @@ function Table() {
       <button
         data-testid="button-remove-filters"
         className="botaoRemoverFiltros"
+        onClick={ (() => setSelecaoFiltro([])) }
       >
         Remover todas filtragens
       </button>
       {
         selecaoFiltro.map((userSelecao, index) => (
-          <div key={ index }>
-            <span className="spanFiltro">
+          <div key={ index } className="spanFiltro" data-testid="filter">
+            <span>
               {userSelecao.colunas}
               {' '}
               {userSelecao.condicao}
@@ -123,7 +124,6 @@ function Table() {
               {userSelecao.valor}
             </span>
             <button
-              data-testid="filter"
               onClick={ () => removeFiltro(userSelecao.colunas) }
             >
               X
