@@ -4,37 +4,31 @@ import StarwarsContext from '../context/StarwarsContext';
 function Table() {
   const { planets } = useContext(StarwarsContext);
   const [buscaNome, setBuscaNome] = useState('');
-  const [selected, setSelected] = useState({
+  const [selecao, setselecao] = useState({
     colunas: 'population',
     condicao: 'maior que',
     valor: 0,
   });
-  const [selectedFilter, setSelectedFilter] = useState([]);
-
-  // const planetsFilter = () => planets
-  //   .filter((p) => p.name.toLowerCase().includes(buscaNome.toLowerCase()));
-  // console.log(planets);
+  const [selecaoFiltro, setSelecaoFiltro] = useState([]);
 
   const tratarDados = () => {
-    // filtro por nome
     const filtraNome = planets
       .filter(({ name }) => name.toLowerCase().includes(buscaNome.toLowerCase()));
+      // console.log(filtraNome);
 
     const filtrarTudo = filtraNome.filter((nome) => {
-      const filtroPlanetas = selectedFilter.map(({
+      const filtroPlanetas = selecaoFiltro.map(({
         colunas, condicao, valor }) => {
-        switch (condicao) {
-        case 'maior que':
+        if (condicao === 'maior que') {
           return Number(nome[colunas]) > Number(valor);
-        case 'menor que':
+        } if (condicao === 'menor que') {
           return Number(nome[colunas]) < Number(valor);
-        case 'igual a':
+        } if (condicao === 'igual a') {
           return Number(nome[colunas]) === Number(valor);
-        default:
-          return true;
         }
+        return true;
       });
-      return filtroPlanetas.every((el) => el);
+      return filtroPlanetas.every((planeta) => planeta);
     });
     return filtrarTudo;
   };
@@ -51,8 +45,8 @@ function Table() {
       <br />
       <select
         data-testid="column-filter"
-        value={ selected.colunas }
-        onChange={ (e) => setSelected({ ...selected, colunas: e.target.value }) }
+        value={ selecao.colunas }
+        onChange={ (e) => setselecao({ ...selecao, colunas: e.target.value }) }
       >
         <option value="population">population</option>
         <option value="orbital_period">orbital_period</option>
@@ -63,8 +57,8 @@ function Table() {
 
       <select
         data-testid="comparison-filter"
-        value={ selected.condicao }
-        onChange={ (e) => setSelected({ ...selected, condicao: e.target.value }) }
+        value={ selecao.condicao }
+        onChange={ (e) => setselecao({ ...selecao, condicao: e.target.value }) }
       >
         <option value="maior que">maior que</option>
         <option value="menor que">menor que</option>
@@ -74,18 +68,30 @@ function Table() {
       <input
         type="number"
         data-testid="value-filter"
-        value={ selected.valor }
-        onChange={ (e) => setSelected({ ...selected, valor: e.target.value }) }
+        value={ selecao.valor }
+        onChange={ (e) => setselecao({ ...selecao, valor: e.target.value }) }
       />
 
       <button
         data-testid="button-filter"
         type="button"
-        onClick={ () => setSelectedFilter([...selectedFilter, selected]) }
+        onClick={ () => setSelecaoFiltro([...selecaoFiltro, selecao]) }
       >
         Filtrar
       </button>
-
+      {
+        selecaoFiltro.map((userSelecao, index) => (
+          <div key={ index }>
+            <span>
+              {userSelecao.colunas}
+              {' '}
+              {userSelecao.condicao}
+              {' '}
+              {userSelecao.valor}
+            </span>
+          </div>
+        ))
+      }
       <br />
       <br />
       <table>
