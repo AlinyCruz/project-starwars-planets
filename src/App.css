@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Gloock&family=Quicksand:wght@300&family=Tilt+Prism&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Gloock&family=Quicksand:wght@300&family=Tilt+Prism&display=swap') ;
 
 body {
   background-image: url('https://wallpaperaccess.com/full/2137901.jpg');
@@ -19,11 +19,11 @@ table {
 }
 
 h1 {
-  font-size: 50px;
-  text-align: center;
   border-radius: 15px;
   color: rgb(237, 185, 0);
+  font-size: 50px;
   padding: 5px;
+  text-align: center;
 }
 
 th {
@@ -41,25 +41,37 @@ th, td {
   border: 1px solid white;
   border-radius: 15px;
   color: black;
-  width: 250px;
+  margin-top: 15px;
+  width: 290px;
 }
 
 .inputPlanet, .inputNumber {
   border-radius: 10px;
-  height: 20px;
-  width: 300px;
+  height: 25px;
+  margin: 5px;
+  width: 200px;
 }
 
 .botaoFiltrar, select {
   border-radius: 8px;
   font-family: Gloock , serif;
-  height: 25px;
+  font-size: 16px;
+  height: 30px;
+  margin: 5px;
   width: 110px;
+}
+
+select {
+  font-size: 16px;
+  height: 30px;
+  margin: 5px;
 }
 
 .botaoRemoverFiltros {
   border-radius: 8px;
   font-family: Gloock , serif;
-  height: 25px;
-  width: 180px;
+  font-size: 16px;
+  height: 30px;
+  margin: 5px;
+  width: 210px;
 }
