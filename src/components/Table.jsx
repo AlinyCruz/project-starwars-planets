@@ -48,7 +48,7 @@ function Table() {
   return (
     <div>
       <h1>
-        Starwars Planets
+        Star Wars Planets
       </h1>
       <input
         type="text"
